@@ -2,11 +2,11 @@ require 'pry'
 require 'net/http'
 require 'nokogiri'
 
-require_relative 'sesc/cities/sp'
-require_relative 'sesc/crawler'
-require_relative 'sesc/parser/events'
-require_relative 'sesc/parser/body'
-require_relative 'sesc/exporter/term'
+require 'sesc/cities/sp'
+require 'sesc/crawler'
+require 'sesc/parser/events'
+require 'sesc/parser/body'
+require 'sesc/exporter/term'
 
 module Sesc
   def self.sp
