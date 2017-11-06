@@ -12,11 +12,19 @@ Gem::Specification.new do |s|
   s.description = 'A simple wrap to list events of SESC'
   s.authors     = ['fernandopso']
   s.email       = 'fernandopso@bsi.ufla.br'
-  s.files       = ['lib/sesc.rb']
   s.license     = 'MIT'
   s.homepage    = 'https://github.com/fernandopso/sesc'
 
   s.executables << 'sesc'
+
+  s.files = `git ls-files`.split($RS).reject do |file|
+    file =~ %r{^(?:
+    spec/.*
+    |Gemfile
+    |\.rspec
+    |\.gitignore
+    )$}x
+  end
 
   s.required_ruby_version = '>= 2.0.0'
 
