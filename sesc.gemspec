@@ -16,8 +16,10 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.homepage    = 'https://github.com/fernandopso/sesc'
 
+  s.executables << 'sesc'
+
   s.required_ruby_version = '>= 2.0.0'
-  s.executables           = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
 
   s.add_runtime_dependency('nokogiri', '~> 1.8.0', '>= 1.8.0')
+  s.add_development_dependency('pry', '~> 0.11.0')
 end
