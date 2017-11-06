@@ -54,7 +54,7 @@ module Sesc
       end
 
       def place(element)
-        clear_text_for(element.css('span')[2].children.first.text)
+        "SESC #{clear_text_for(element.css('span')[2].children.first.text)}"
       end
 
       def description(element)

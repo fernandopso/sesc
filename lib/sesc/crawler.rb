@@ -1,8 +1,8 @@
 module Sesc
   class Crawler
-    BASE_URL = 'https://www.sescsp.org.br/'.freeze
+    BASE_URL = 'https://www.sescsp.org.br'.freeze
 
-    EVENTS_PATH = 'programacao/ajax/homeView.action?/programacao/ajax/homeView.action?atividades=&calendar_dates=&remove_dates=&maxResults=100'.freeze
+    EVENTS_PATH = '/programacao/ajax/homeView.action?/programacao/ajax/homeView.action?atividades=&calendar_dates=&remove_dates=&maxResults=100'.freeze
 
     class << self
       def get
