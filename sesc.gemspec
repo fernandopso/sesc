@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'fernandopso@bsi.ufla.br'
   s.files       = ["lib/sesc.rb"]
   s.license     = 'MIT'
+  s.executables = ['sesc']
 end
