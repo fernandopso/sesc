@@ -19,5 +19,3 @@ module Sesc
     Sesc::Crawler.new(10).get
   end
 end
-
-Sesc.sp
