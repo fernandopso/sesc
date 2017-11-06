@@ -1,7 +1,7 @@
 module Sesc
   class SP
-    def initialize(max_results = nil)
-      @max_results = max_results
+    def initialize(html_response)
+      @html_response = html_response
     end
 
     def print_on_terminal
@@ -11,11 +11,7 @@ module Sesc
     private
 
     def events
-      Sesc::Parser::Events.new(html_response).to_hash
-    end
-
-    def html_response
-      Sesc::Crawler.new(@max_results).get
+      Sesc::Parser::Events.new(@html_response).to_hash
     end
   end
 end
