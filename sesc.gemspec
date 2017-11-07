@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0.0'
 
   s.add_runtime_dependency('nokogiri', '~> 1.8.0', '>= 1.8.0')
+  s.add_runtime_dependency('thor', '~> 0.20.0', '>= 0.20.0')
 end

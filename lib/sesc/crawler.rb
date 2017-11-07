@@ -4,7 +4,7 @@ module Sesc
 
     EVENTS_PATH = '/programacao/ajax/homeView.action?/programacao/ajax/homeView.action?atividades=&calendar_dates=&remove_dates=&maxResults=%s'.freeze
 
-    MAX_RESULTS = 100
+    MAX_RESULTS = 5
 
     def initialize(max_results = nil)
       @max_results = max_results || MAX_RESULTS
