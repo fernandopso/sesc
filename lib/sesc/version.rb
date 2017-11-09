@@ -1,5 +1,5 @@
 module Sesc
   module Version
-    STRING = '0.0.9'.freeze
+    STRING = '0.0.10'.freeze
   end
 end

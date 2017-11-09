@@ -1,6 +1,7 @@
 require 'net/http'
 require 'nokogiri'
 
+require 'sesc/cli/methods'
 require 'sesc/cli'
 require 'sesc/cities'
 require 'sesc/cities/sp'
