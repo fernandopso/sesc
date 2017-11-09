@@ -6,6 +6,12 @@ module Sesc
       end
 
       def to_hash
+        group_by_place(load_events)
+      end
+
+      private
+
+      def load_events
         @events.map do |event|
           {
             url:          url(          event.elements[0] ),
@@ -23,7 +29,9 @@ module Sesc
         end
       end
 
-      private
+      def group_by_place(events)
+        events.group_by { |event| event[:place]  }
+      end
 
       def url(element)
         element.css('a').first.attributes['href'].value

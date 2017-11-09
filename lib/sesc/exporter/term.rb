@@ -2,21 +2,30 @@ module Sesc
   class Exporter
     class Term
       class << self
-        def print(events)
-          events.each do |event|
-            puts ''
-            title(event)
-            date(event)
-            place(event)
-            price(event)
-            hours(event)
-            age_limit(event)
-            availability(event)
-            url(event)
+        def print(sescs)
+          sescs.each do |sesc, events|
+            place(sesc)
+            events.each do |event|
+              puts ''
+              title(event)
+              date(event)
+              price(event)
+              hours(event)
+              age_limit(event)
+              availability(event)
+              url(event)
+            end
           end
         end
 
         private
+
+        def place(sesc)
+          puts ''
+          puts_tab "****************************************"
+          puts_tab sesc
+          puts_tab "****************************************"
+        end
 
         def date(event)
           puts_tab "Datas: #{event[:date]}"
@@ -28,10 +37,6 @@ module Sesc
 
         def price(event)
           puts_tab "Preço: #{event[:price]}"
-        end
-
-        def place(event)
-          puts_tab "Local: #{event[:place]}"
         end
 
         def availability(event)
