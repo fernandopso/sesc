@@ -22,9 +22,8 @@ module Sesc
 
         def place(sesc)
           puts ''
-          puts_tab "****************************************"
+          puts_tab '########################################'
           puts_tab sesc
-          puts_tab "****************************************"
         end
 
         def date(event)
