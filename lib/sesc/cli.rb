@@ -1,5 +1,3 @@
-require 'pry'
-
 module Sesc
   class Cli
     include Sesc::Cli::Methods
