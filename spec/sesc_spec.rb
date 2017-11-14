@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/sesc'
-
 RSpec.describe Sesc do
   describe '.sp' do
     context 'when call sp with value' do

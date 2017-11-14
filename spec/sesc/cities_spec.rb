@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/sesc/cities'
-
 RSpec.describe Sesc::Cities do
   describe '.include?' do
     context 'when city is included' do
