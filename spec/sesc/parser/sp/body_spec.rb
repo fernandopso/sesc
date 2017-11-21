@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Sesc::Parser::Events do
+RSpec.describe Sesc::Parser::Sp::Body do
   describe '#events' do
     before(:each) do
       VCR.use_cassette('parser/body') do
@@ -8,10 +8,10 @@ RSpec.describe Sesc::Parser::Events do
       end
     end
 
-    let(:events) { described_class.new(@html).to_hash }
+    let(:events) { described_class.new(@html).events }
 
     it 'return an Nokogiri element' do
-      expect(events.keys).to eq ['SESC Vila Mariana']
+      expect(events.first.class).to be Nokogiri::XML::Element
     end
   end
 end

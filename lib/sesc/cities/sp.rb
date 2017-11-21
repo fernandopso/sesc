@@ -12,7 +12,7 @@ module Sesc
       private
 
       def events
-        Sesc::Parser::Events.new(@html_response).to_hash
+        Sesc::Parser::Sp::Events.new(@html_response).to_hash
       end
     end
   end
