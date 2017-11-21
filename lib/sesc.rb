@@ -9,6 +9,7 @@ require 'sesc/crawler'
 require 'sesc/parser/events'
 require 'sesc/parser/body'
 require 'sesc/exporter/term'
+require 'sesc/version'
 
 module Sesc
   def self.sp(number_of_events)
