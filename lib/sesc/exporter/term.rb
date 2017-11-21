@@ -6,7 +6,7 @@ module Sesc
           sescs.each do |sesc, events|
             place(sesc)
             events.each do |event|
-              puts ''
+              puts_tab ''
               title(event)
               date(event)
               price(event)
@@ -21,9 +21,10 @@ module Sesc
         private
 
         def place(sesc)
-          puts ''
-          puts_tab '########################################'
-          puts_tab sesc
+          puts_tab ''
+          puts_tab '##'
+          puts_tab "# #{sesc}"
+          puts_tab '##'
         end
 
         def date(event)
@@ -55,7 +56,7 @@ module Sesc
         end
 
         def puts_tab(line)
-          puts " " * 5 + line
+          puts(" " * 5 + line) unless ENV['DISABLE_OUTPUT']
         end
       end
     end
