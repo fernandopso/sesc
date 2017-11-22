@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sesc
   class Exporter
     class Term
@@ -52,7 +54,7 @@ module Sesc
         end
 
         def url(event)
-          puts_tab "URL: #{Sesc::Crawler::BASE_URL + event[:url]}"
+          puts_tab "URL: #{Sesc::Config.base_url + event[:url]}"
         end
 
         def puts_tab(line)

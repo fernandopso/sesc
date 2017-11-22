@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sesc
   class Cli
     include Sesc::Cli::Options

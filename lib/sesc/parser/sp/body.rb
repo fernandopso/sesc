@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sesc
   module Parser
     module Sp

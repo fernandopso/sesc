@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sesc
   class Cities
     FOLTER = "./lib/sesc/cities/".freeze

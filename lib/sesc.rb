@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'nokogiri'
 
@@ -6,6 +8,7 @@ require 'sesc/cli'
 require 'sesc/crawler'
 require 'sesc/cities'
 require 'sesc/cities/sp'
+require 'sesc/config'
 require 'sesc/parser/sp/events'
 require 'sesc/parser/sp/body'
 require 'sesc/exporter/term'
