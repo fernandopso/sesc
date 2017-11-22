@@ -51,5 +51,15 @@ RSpec.describe Sesc::Cli do
         it { expect(@events.values.flatten.count).to eq 3 }
       end
     end
+
+    context 'when pass some options' do
+      before(:each) do
+        VCR.use_cassette('cli/--city--number-n') do
+          @events = Sesc::Cli.new(['--city', 'mg', '-c', 'sp', '--number', 5, '-n', 1]).call
+        end
+      end
+
+      it { expect(@events['SESC Vila Mariana'].first.keys).to eq result }
+    end
   end
 end

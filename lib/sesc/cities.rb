@@ -2,8 +2,6 @@ module Sesc
   class Cities
     FOLTER = "./lib/sesc/cities/".freeze
 
-    DEFAULT = 'sp'.freeze
-
     def self.include?(city)
       valids.include?(city)
     end

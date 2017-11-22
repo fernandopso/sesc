@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Sesc::Crawler do
-  subject { described_class.new }
+  let(:number) { Sesc::Cli::Options::DEFAULT[:number] }
+  subject      { described_class.new(number) }
 
   describe '#get' do
     before(:each) do

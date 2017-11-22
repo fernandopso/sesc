@@ -1,6 +1,6 @@
 module Sesc
   class Cli
-    include Sesc::Cli::Methods
+    include Sesc::Cli::Options
 
     attr_accessor :args
 
@@ -11,7 +11,7 @@ module Sesc
     def call
       return 'TODO: Write help' if help?
       if Sesc::Cities.include?(city)
-        Sesc.send(city, number_of_events)
+        Sesc.send(city, number)
       else
         puts "Não foi possível encontrar a cidade: #{city}"
       end
