@@ -15,25 +15,27 @@ module Sesc
         private
 
         def load_events
-          @events.map do |event|
-            {
-              url:          url(          event.elements[0] ),
-              image_url:    image_url(    event.elements[0] ),
-              availability: availability( event.elements[0] ),
-              category:     category(     event.elements[1] ),
-              title:        title(        event.elements[1] ),
-              date:         date(         event.elements[1] ),
-              hours:        hours(        event.elements[1] ),
-              place:        place(        event.elements[1] ),
-              description:  description(  event.elements[1] ),
-              age_limit:    age_limit(    event.elements[3] ),
-              price:        price(        event.elements[3] )
-            }
-          end
+          @events.map { |event| build(event) }
+        end
+
+        def build(event)
+          {
+            url: url(event.elements[0]),
+            image_url: image_url(event.elements[0]),
+            availability: availability(event.elements[0]),
+            category: category(event.elements[1]),
+            title: title(event.elements[1]),
+            date: date(event.elements[1]),
+            hours: hours(event.elements[1]),
+            place: place(event.elements[1]),
+            description: description(event.elements[1]),
+            age_limit: age_limit(event.elements[3]),
+            price: price(event.elements[3])
+          }
         end
 
         def group_by_place(events)
-          events.group_by { |event| event[:place]  }
+          events.group_by { |event| event[:place] }
         end
 
         def url(element)
@@ -45,7 +47,7 @@ module Sesc
         end
 
         def availability(element)
-          element.css('span').last.children.first.text if element.css('span').last.children.first
+          element.css('span').last.children.first&.text
         end
 
         def category(element)
@@ -69,7 +71,9 @@ module Sesc
         end
 
         def description(element)
-          clear_text_for(element.css('form').last.children[1].children.first.text)
+          clear_text_for(
+            element.css('form').last.children[1].children.first.text
+          )
         end
 
         def age_limit(element)
@@ -78,7 +82,7 @@ module Sesc
 
         def price(element)
           p = clear_text_for(element.children[5].text)
-          p.split('R$ ').join(" R$ ").strip
+          p.split('R$ ').join(' R$ ').strip
         end
 
         def clear_text_for(text)

@@ -11,7 +11,7 @@ RSpec.describe Sesc::Cities::Sp do
     let(:events) { described_class.new(@html_response).print_on_terminal }
 
     it 'return a array of events' do
-      expect(events['SESC Vila Mariana'].first.keys).to eq %i(
+      expect(events['SESC Vila Mariana'].first.keys).to eq %i[
         url
         image_url
         availability
@@ -23,7 +23,7 @@ RSpec.describe Sesc::Cities::Sp do
         description
         age_limit
         price
-      )
+      ]
     end
   end
 end

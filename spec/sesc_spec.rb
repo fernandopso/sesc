@@ -4,7 +4,7 @@ RSpec.describe Sesc do
   describe '.sp' do
     context 'when call sp with value' do
       before(:each) do
-        VCR.use_cassette("sp") do
+        VCR.use_cassette('sp') do
           @events = Sesc.sp(1)
         end
       end

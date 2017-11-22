@@ -21,7 +21,8 @@ module Sesc
       end
 
       def index_for(values)
-        values.each { |v| return args.index(v) if args.index(v) }; nil
+        values.each { |v| return args.index(v) if args.index(v) }
+        nil
       end
     end
   end

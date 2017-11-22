@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe Sesc::Cli do
-  let(:result) { %i[url image_url availability category title date hours place description age_limit price] }
+  let(:result) do
+    %i[url image_url availability category title
+       date hours place description age_limit price]
+  end
 
   describe '.call' do
     context 'when city exists' do
@@ -53,9 +56,10 @@ RSpec.describe Sesc::Cli do
     end
 
     context 'when pass some options' do
+      let(:options) { ['--city', 'mg', '-c', 'sp', '--number', 5, '-n', 1] }
       before(:each) do
         VCR.use_cassette('cli/--city--number-n') do
-          @events = Sesc::Cli.new(['--city', 'mg', '-c', 'sp', '--number', 5, '-n', 1]).call
+          @events = Sesc::Cli.new(options).call
         end
       end
 

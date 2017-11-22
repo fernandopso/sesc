@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
 
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'sesc/version'
@@ -28,10 +28,11 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_runtime_dependency('nokogiri', '~> 1.8.0',  '>= 1.8.0')
-  s.add_runtime_dependency('thor',     '~> 0.20.0', '>= 0.20.0')
+  s.add_runtime_dependency('nokogiri', '~> 1.8.0', '>= 1.8.0')
+  s.add_runtime_dependency('thor', '~> 0.20.0', '>= 0.20.0')
 
-  s.add_development_dependency('rspec',   '~> 3.7')
-  s.add_development_dependency('vcr',     '~> 3.0', '>= 3.0.0')
+  s.add_development_dependency('rspec', '~> 3.7')
+  s.add_development_dependency('rubocop', '~> 0.51.0', '>= 0.51.0')
+  s.add_development_dependency('vcr', '~> 3.0', '>= 3.0.0')
   s.add_development_dependency('webmock', '~> 3.1', '>= 3.1.0')
 end

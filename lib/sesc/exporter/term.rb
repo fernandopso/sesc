@@ -7,20 +7,24 @@ module Sesc
         def print(sescs)
           sescs.each do |sesc, events|
             place(sesc)
-            events.each do |event|
-              puts_tab ''
-              title(event)
-              date(event)
-              price(event)
-              hours(event)
-              age_limit(event)
-              availability(event)
-              url(event)
-            end
+            print_event_for(events)
           end
         end
 
         private
+
+        def print_event_for(events)
+          events.each do |event|
+            puts_tab ''
+            title(event)
+            date(event)
+            price(event)
+            hours(event)
+            age_limit(event)
+            availability(event)
+            url(event)
+          end
+        end
 
         def place(sesc)
           puts_tab ''
@@ -42,7 +46,8 @@ module Sesc
         end
 
         def availability(event)
-          puts_tab "Disponibilidade: #{event[:availability]}" if event[:availability]
+          return unless event[:availability]
+          puts_tab "Disponibilidade: #{event[:availability]}"
         end
 
         def age_limit(event)
@@ -58,7 +63,7 @@ module Sesc
         end
 
         def puts_tab(line)
-          puts(" " * 5 + line) unless ENV['DISABLE_OUTPUT']
+          puts(' ' * 5 + line) unless ENV['DISABLE_OUTPUT']
         end
       end
     end

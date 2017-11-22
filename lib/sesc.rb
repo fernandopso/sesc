@@ -19,7 +19,7 @@ module Sesc
     Sesc::Cities::Sp.new(crawler_sesc(number)).print_on_terminal
   end
 
-  private
+  private_class_method
 
   def self.crawler_sesc(number)
     Sesc::Crawler.new(number).get
