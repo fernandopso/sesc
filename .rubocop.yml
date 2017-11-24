@@ -1,5 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.3
+  Exclude:
+    - spec/sesc/cli_spec.rb
 
 Documentation:
   Enabled: false

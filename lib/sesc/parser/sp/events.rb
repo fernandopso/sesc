@@ -4,6 +4,11 @@ module Sesc
   module Parser
     module Sp
       class Events
+        VALUES = %i[
+          url image_url availability category title date
+          hours place description age_limit price
+        ].freeze
+
         def initialize(html_body_events)
           @events = Body.new(html_body_events).events
         end
@@ -15,73 +20,65 @@ module Sesc
         private
 
         def load_events
-          @events.map { |event| build(event) }
-        end
-
-        def build(event)
-          {
-            url: url(event.elements[0]),
-            image_url: image_url(event.elements[0]),
-            availability: availability(event.elements[0]),
-            category: category(event.elements[1]),
-            title: title(event.elements[1]),
-            date: date(event.elements[1]),
-            hours: hours(event.elements[1]),
-            place: place(event.elements[1]),
-            description: description(event.elements[1]),
-            age_limit: age_limit(event.elements[3]),
-            price: price(event.elements[3])
-          }
+          @events.map do |event|
+            VALUES.each_with_object({}) do |value, memo|
+              memo[value] = send(value, event)
+            end
+          end
         end
 
         def group_by_place(events)
           events.group_by { |event| event[:place] }
         end
 
-        def url(element)
-          element.css('a').first.attributes['href'].value
+        def url(event)
+          event.elements[0].css('a').first.attributes['href'].value
         end
 
-        def image_url(element)
-          element.css('span').first.attributes.values.last.value[22..-3]
+        def image_url(event)
+          i = event.elements[0].css('span').first
+          i.attributes.values.last.value[22..-3]
         end
 
-        def availability(element)
-          element.css('span').last.children.first&.text
+        def availability(event)
+          event.elements[0].css('span').last.children.first&.text
         end
 
-        def category(element)
-          element.css('p').first.children[1].text
+        def category(event)
+          event.elements[1].css('p').first.children[1].text
         end
 
-        def title(element)
-          element.css('a')[1].attributes['data-ga-action'].value
+        def title(event)
+          event.elements[1].css('a')[1].attributes['data-ga-action'].value
         end
 
-        def date(element)
-          clear_text_for(element.css('span').first.children.first.text)
-        end
-
-        def hours(element)
-          clear_text_for(element.css('span')[1].children.first.text)
-        end
-
-        def place(element)
-          "SESC #{clear_text_for(element.css('span')[2].children.first.text)}"
-        end
-
-        def description(element)
+        def date(event)
           clear_text_for(
-            element.css('form').last.children[1].children.first.text
+            event.elements[1].css('span').first.children.first.text
           )
         end
 
-        def age_limit(element)
-          element.children[3].elements.last.text
+        def hours(event)
+          clear_text_for(event.elements[1].css('span')[1].children.first.text)
         end
 
-        def price(element)
-          p = clear_text_for(element.children[5].text)
+        def place(event)
+          p = event.elements[1].css('span')[2].children.first.text
+          "SESC #{clear_text_for(p)}"
+        end
+
+        def description(event)
+          clear_text_for(
+            event.elements[1].css('form').last.children[1].children.first.text
+          )
+        end
+
+        def age_limit(event)
+          event.elements[3].children[3].elements.last.text
+        end
+
+        def price(event)
+          p = clear_text_for(event.elements[3].children[5].text)
           p.split('R$ ').join(' R$ ').strip
         end
 
