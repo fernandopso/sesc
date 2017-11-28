@@ -5,6 +5,7 @@ require 'nokogiri'
 require 'yaml'
 
 require 'sesc/cli/options'
+require 'sesc/cli/filter'
 require 'sesc/cli'
 require 'sesc/crawler'
 require 'sesc/cities'
