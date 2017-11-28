@@ -7,6 +7,8 @@ RSpec.describe Sesc::Cli do
   end
 
   describe '.call' do
+    subject { @events.values.flatten.first.keys }
+
     context 'when city exists' do
       context '--city' do
         before(:each) do
@@ -15,7 +17,7 @@ RSpec.describe Sesc::Cli do
           end
         end
 
-        it { expect(@events['SESC Vila Mariana'].first.keys).to eq result }
+        it { expect(subject).to eq result }
       end
 
       context '--c' do
@@ -25,7 +27,7 @@ RSpec.describe Sesc::Cli do
           end
         end
 
-        it { expect(@events['SESC Vila Mariana'].first.keys).to eq result }
+        it { expect(subject).to eq result }
       end
     end
 
@@ -63,7 +65,7 @@ RSpec.describe Sesc::Cli do
         end
       end
 
-      it { expect(@events['SESC Vila Mariana'].first.keys).to eq result }
+      it { expect(subject).to eq result }
     end
   end
 end

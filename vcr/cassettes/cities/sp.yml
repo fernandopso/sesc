@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.sescsp.org.br/programacao/ajax/homeView.action?/programacao/ajax/homeView.action?atividades=&calendar_dates=&maxResults=1&remove_dates=
+    uri: https://www.sescsp.org.br/programacao/ajax/homeView.action?atividades=&calendar_dates=&maxResults=1&remove_dates=
     body:
       encoding: US-ASCII
       string: q=
@@ -31,23 +31,23 @@ http_interactions:
       Content-Language:
       - pt-BR
       Date:
-      - Tue, 21 Nov 2017 19:35:25 GMT
+      - Tue, 28 Nov 2017 21:57:32 GMT
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - AWSELB=43E7B53B16A3E20276CAE860896B6B294B42D0285E9BAD3AC7F72AE66059BB6D3F0A4C00E13BA761DACF9F84C0E5D40369876181771527F119A8C4053975BE84912548C779CFFE49DE400BEFE5D9BEDF4FEC3915A0;PATH=/;HTTPONLY
-      - JSESSIONID=D70F8ECFB134CAD943AFE166640E3696; Path=/; HttpOnly
+      - AWSELB=43E7B53B16A3E20276CAE860896B6B294B42D0285EDF98F2A662CEC78BBC1983B1A2C3FD3BFA0B1AA8D59DA6CB9861D0322EF14D6F63577B2B8163F75C78992B876DC0302CA8A7254432225C7DCD735255702BF7F4;PATH=/;HTTPONLY
+      - JSESSIONID=3BBEF7F2D0B568165812E06FDB2F8291; Path=/; HttpOnly
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 947c54b45c3c8c597031c85dd8160216.cloudfront.net (CloudFront)
+      - 1.1 6ce5b4071d459e16e932015e6e13e48b.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 4--k9tbRZFFBYKKgW5X31gvgR-6dmWxJbqBP21hOQNLpzmSAL1oM5w==
+      - GRbWGdcjXMCA2aT6PbvGOmz6Ddd6LyBGL6czcFciQhkDxvcKpjaHJg==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         CgoKCgoKCgoKCgoKCgoKCg0KPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0i
-        dG90YWxfcmVnaXN0cm9zIiB2YWx1ZT0iMTc2OSIvPg0KCQ0KCQ0KCTxkaXYg
+        dG90YWxfcmVnaXN0cm9zIiB2YWx1ZT0iMTY2NyIvPg0KCQ0KCQ0KCTxkaXYg
         aWQ9ImhvbGRlcl9yZXN1bHRzIiBjbGFzcz0icHJvZ3JhbWFjYW8iPg0KDQoJ
         CQ0KCQkJPGFydGljbGUgY2xhc3M9ImJsb2NrX2FnZW5kYSI+DQoJCQkJPGRp
         diBjbGFzcz0iYmxvY2tfYWdlbmRhLXBob3RvIj4NCgkJCQkJPGRpdiBjbGFz
@@ -136,5 +136,5 @@ http_interactions:
         DQoJCQkJCQkJPC9hc2lkZT4NCgkJCQk8L2FydGljbGU+DQoNCgkJDQoJCQkJ
         CTwvZGl2Pg0KCQ0KCQ0K
     http_version: 
-  recorded_at: Tue, 21 Nov 2017 19:35:26 GMT
+  recorded_at: Tue, 28 Nov 2017 21:57:32 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.sescsp.org.br/programacao/ajax/homeView.action?/programacao/ajax/homeView.action?atividades=&calendar_dates=&maxResults=5&remove_dates=
+    uri: https://www.sescsp.org.br/programacao/ajax/homeView.action?atividades=&calendar_dates=&maxResults=5&remove_dates=
     body:
       encoding: US-ASCII
       string: q=
@@ -31,23 +31,23 @@ http_interactions:
       Content-Language:
       - pt-BR
       Date:
-      - Tue, 14 Nov 2017 14:40:34 GMT
+      - Tue, 28 Nov 2017 21:57:35 GMT
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - AWSELB=43E7B53B16A3E20276CAE860896B6B294B42D0285E69ADE0D0974551E57483D6F3DE52C1172E32A23AEDFA91BACF3125BB7DAB54A01527F119A8C4053975BE84912548C77910EDDD1BA2A31EDA931EFB20DEB19FDA;PATH=/;HTTPONLY
-      - JSESSIONID=0CFEF04CE371D25126147E50ABBA793F; Path=/; HttpOnly
+      - AWSELB=43E7B53B16A3E20276CAE860896B6B294B42D0285E3F38913323AF15450E7D21E2B064B6DD4EEAE086617379E7AC069EB0ED0214CE39A1F0B30E3DA1F5FBFE44FA5E8318C65EC5F46FD55AC77F02F2545C9DBF4CCF;PATH=/;HTTPONLY
+      - JSESSIONID=B9673EB8B53449BC8C88D2368B252EAF; Path=/; HttpOnly
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 fafe70a687f382ef911251476b47a592.cloudfront.net (CloudFront)
+      - 1.1 711a8067bc4b9bfebe2e946c6bc0c96f.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 7S9z5HfSDhWC5pmWltPIJwL3Z862hS-9wqI6foAq0qcxH_-vIYujZQ==
+      - vWZgMtjTQwMD98LOHw0woMjGcccbnnre0xX0u-bmqQYix7eA_LIVxQ==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         CgoKCgoKCgoKCgoKCgoKCg0KPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0i
-        dG90YWxfcmVnaXN0cm9zIiB2YWx1ZT0iMTg0OSIvPg0KCQ0KCQ0KCTxkaXYg
+        dG90YWxfcmVnaXN0cm9zIiB2YWx1ZT0iMTY2NyIvPg0KCQ0KCQ0KCTxkaXYg
         aWQ9ImhvbGRlcl9yZXN1bHRzIiBjbGFzcz0icHJvZ3JhbWFjYW8iPg0KDQoJ
         CQ0KCQkJPGFydGljbGUgY2xhc3M9ImJsb2NrX2FnZW5kYSI+DQoJCQkJPGRp
         diBjbGFzcz0iYmxvY2tfYWdlbmRhLXBob3RvIj4NCgkJCQkJPGRpdiBjbGFz
@@ -374,9 +374,9 @@ http_interactions:
         PSJzYWliYSBtYWlzIg0KCQkJCQkJCSAgICBkYXRhLWdhLWNhdGVnb3J5PSJQ
         cm9ncmFtYWNhbyINCgkJCQkJCQkJZGF0YS1nYS1hY3Rpb249IlByb2Nlc3Nv
         IHNlbGV0aXZvIENQVHppbmhvIDIwMTgiDQoJCQkJCQkJCWRhdGEtZ2EtbGFi
-        ZWw9IiI+DQoJCQkJCQkJICAgIAlPJm5ic3A7Q3Vyc28gZGUgSW50cm9kdcOn
-        w6NvIGFvIE3DqXRvZG8gZG8gQXRvciBkZSAyMDE4LCByZWFsaXphZG8gYW51
-        YWxtZW50ZSBwZWxvIENQVCAoQ2VudHJvIGRlIFBlc3F1Li4uDQoJCQkJCQkJ
+        ZWw9IiI+DQoJCQkJCQkJICAgIAkNCglPJm5ic3A7Q3Vyc28gZGUgSW50cm9k
+        dcOnw6NvIGFvIE3DqXRvZG8gZG8gQXRvciBkZSAyMDE4LCByZWFsaXphZG8g
+        YW51YWxtZW50ZSBwZWxvIENQVCAoQ2VudHJvIGRlIFBlLi4uDQoJCQkJCQkJ
         CTwvYT4NCgkJCQkJCQkgICAgPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0i
         cGFnZSIgdmFsdWU9IjEiLz4NCgkJCQkJCQk8L2Zvcm0+DQoNCgkJCQkJCTwv
         ZGl2Pg0KCQkJCQkJPGRpdiBjbGFzcz0iYmxvY2tfYWdlbmRhLWNvbnRlbnQi
@@ -510,5 +510,5 @@ http_interactions:
         CQkJPC9kaXY+DQoJCQkJCQkJPC9hc2lkZT4NCgkJCQk8L2FydGljbGU+DQoN
         CgkJDQoJCQkJCTwvZGl2Pg0KCQ0KCQ0K
     http_version: 
-  recorded_at: Tue, 14 Nov 2017 14:40:35 GMT
+  recorded_at: Tue, 28 Nov 2017 21:57:35 GMT
 recorded_with: VCR 3.0.3
