@@ -2,6 +2,7 @@
 
 require 'net/http'
 require 'nokogiri'
+require 'yaml'
 
 require 'sesc/cli/options'
 require 'sesc/cli'
