@@ -8,7 +8,7 @@ module Sesc
       end
 
       def print_on_terminal
-        Sesc::Exporter::Term.print(events)
+        Sesc::Exporter::Events.print(events)
       end
 
       private

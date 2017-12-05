@@ -3,7 +3,7 @@
 module Sesc
   class Cli
     module Filter
-      CITIES = {
+      PLACES = {
         'Grande São Paulo' => [
           ['24 de Maio', 36],
           ['Belenzinho', 25],
@@ -46,7 +46,7 @@ module Sesc
           ['São José dos Campos', 23],
           ['Taubaté', 24]
         ]
-      }
+      }.freeze
     end
   end
 end

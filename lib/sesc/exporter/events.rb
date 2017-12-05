@@ -2,7 +2,7 @@
 
 module Sesc
   class Exporter
-    class Term
+    class Events
       class << self
         def print(sescs)
           sescs.each do |sesc, events|
@@ -63,7 +63,7 @@ module Sesc
         end
 
         def puts_tab(line)
-          puts(' ' * 5 + line) unless ENV['DISABLE_OUTPUT']
+          Sesc::Exporter::Printer.puts_tab(line)
         end
       end
     end

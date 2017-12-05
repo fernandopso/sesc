@@ -15,7 +15,7 @@ module Sesc
       if Sesc::Cities.include?(city)
         Sesc.send(city, number)
       else
-        puts "Não foi possível encontrar a cidade: #{city}"
+        Sesc::Exporter::Printer.puts_tab "Cidade #{city} não encontrada"
       end
     end
   end
