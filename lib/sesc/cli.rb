@@ -12,7 +12,9 @@ module Sesc
 
     def call
       return 'TODO: Write help' if help?
-      if Sesc::Cities.include?(city)
+      if places?
+        Sesc.places
+      elsif Sesc::Cities.include?(city)
         Sesc.send(city, number)
       else
         Sesc::Exporter::Printer.tabulated "Cidade #{city} não encontrada"

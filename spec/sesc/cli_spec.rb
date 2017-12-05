@@ -20,7 +20,7 @@ RSpec.describe Sesc::Cli do
         it { expect(subject).to eq result }
       end
 
-      context '--c' do
+      context '-c' do
         before(:each) do
           VCR.use_cassette('cli/-c') do
             @events = Sesc::Cli.new(['--c', 'sp']).call
@@ -38,7 +38,7 @@ RSpec.describe Sesc::Cli do
         it { expect(@events).to eq nil }
       end
 
-      context '--c' do
+      context '-c' do
         before(:each) { @events = Sesc::Cli.new(['-c', 'mg']).call }
 
         it { expect(@events).to eq nil }
@@ -66,6 +66,22 @@ RSpec.describe Sesc::Cli do
       end
 
       it { expect(subject).to eq result }
+    end
+  end
+
+  describe 'place attribute' do
+    let(:places) { Sesc::Cli.new(options).call }
+
+    context 'when send --places' do
+      let(:options) { ['--places'] }
+
+      it { expect(places.flatten(2).count).to eq 40 }
+    end
+
+    context 'when send -p' do
+      let(:options) { ['-p'] }
+
+      it { expect(places.flatten(2).count).to eq 40 }
     end
   end
 end

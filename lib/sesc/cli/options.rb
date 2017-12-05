@@ -20,6 +20,10 @@ module Sesc
         args.include?('-h') || args.include?('--help')
       end
 
+      def places?
+        args.include?('-p') || args.include?('--places')
+      end
+
       def index_for(values)
         values.each { |v| return args.index(v) if args.index(v) }
         nil
