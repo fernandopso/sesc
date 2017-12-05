@@ -15,7 +15,7 @@ module Sesc
 
         def print_event_for(events)
           events.each do |event|
-            puts_tab ''
+            pprint ''
             title(event)
             date(event)
             price(event)
@@ -27,43 +27,43 @@ module Sesc
         end
 
         def place(sesc)
-          puts_tab ''
-          puts_tab '##'
-          puts_tab "# #{sesc}"
-          puts_tab '##'
+          pprint ''
+          pprint '##'
+          pprint "# #{sesc}"
+          pprint '##'
         end
 
         def date(event)
-          puts_tab "Datas: #{event[:date]}"
+          pprint "Datas: #{event[:date]}"
         end
 
         def title(event)
-          puts_tab "#{event[:title]} | #{event[:description]}"
+          pprint "#{event[:title]} | #{event[:description]}"
         end
 
         def price(event)
-          puts_tab "Preço: #{event[:price]}"
+          pprint "Preço: #{event[:price]}"
         end
 
         def availability(event)
           return unless event[:availability]
-          puts_tab "Disponibilidade: #{event[:availability]}"
+          pprint "Disponibilidade: #{event[:availability]}"
         end
 
         def age_limit(event)
-          puts_tab "Classificação: #{event[:age_limit]}"
+          pprint "Classificação: #{event[:age_limit]}"
         end
 
         def hours(event)
-          puts_tab "Horários: #{event[:hours]}"
+          pprint "Horários: #{event[:hours]}"
         end
 
         def url(event)
-          puts_tab "URL: #{Sesc::Config.base_url + event[:url]}"
+          pprint "URL: #{Sesc::Config.base_url + event[:url]}"
         end
 
-        def puts_tab(line)
-          Sesc::Exporter::Printer.puts_tab(line)
+        def pprint(line)
+          Sesc::Exporter::Printer.tabulated(line)
         end
       end
     end

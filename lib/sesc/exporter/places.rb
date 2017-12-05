@@ -12,10 +12,10 @@ module Sesc
 
         def print_cities(cities, i = 0)
           cities.each do |city, places|
-            Sesc::Exporter::Printer.puts_tab('')
-            Sesc::Exporter::Printer.puts_tab(city)
+            Sesc::Exporter::Printer.tabulated('')
+            Sesc::Exporter::Printer.tabulated(city)
             places.each do |(place, _)|
-              Sesc::Exporter::Printer.puts_tab("#{i += 1}. #{place}", 2)
+              Sesc::Exporter::Printer.tabulated("#{i += 1}. #{place}", 2)
             end
           end
         end

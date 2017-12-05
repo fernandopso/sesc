@@ -4,7 +4,7 @@ module Sesc
   class Exporter
     class Printer
       class << self
-        def puts_tab(line, tabulation = 1)
+        def tabulated(line, tabulation = 1)
           puts(' ' * 4 * tabulation + line) unless ENV['DISABLE_OUTPUT']
         end
       end
