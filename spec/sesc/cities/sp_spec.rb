@@ -2,12 +2,7 @@
 
 RSpec.describe Sesc::Cities::Sp do
   describe '#print_on_terminal' do
-    let(:result) do
-      %i[
-        url image_url availability category title date
-        hours place description age_limit price
-      ]
-    end
+    let(:result) { build(:response).to_h.keys }
 
     before(:each) do
       VCR.use_cassette('cities/sp') do

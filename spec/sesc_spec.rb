@@ -2,14 +2,9 @@
 
 RSpec.describe Sesc do
   describe '.sp' do
-    context 'when call sp with number value' do
-      let(:result) do
-        %i[
-          url image_url availability category title date
-          hours place description age_limit price
-        ]
-      end
+    let(:result) { build(:response).to_h.keys }
 
+    context 'when call sp with number value' do
       before(:each) do
         VCR.use_cassette('sp') do
           @events = Sesc.sp(1, '')
@@ -22,13 +17,6 @@ RSpec.describe Sesc do
     end
 
     context 'when call sp with places value' do
-      let(:result) do
-        %i[
-          url image_url availability category title date
-          hours place description age_limit price
-        ]
-      end
-
       before(:each) do
         VCR.use_cassette('sp/places') do
           @events = Sesc.sp(5, '1,2')

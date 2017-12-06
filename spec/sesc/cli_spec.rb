@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Sesc::Cli do
-  let(:result) do
-    %i[url image_url availability category title
-       date hours place description age_limit price]
-  end
+  let(:result) { build(:response).to_h.keys }
 
   describe '.call' do
     subject { @events.values.flatten.first.keys }
