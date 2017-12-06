@@ -19,13 +19,13 @@ require 'sesc/exporter/events'
 require 'sesc/version'
 
 module Sesc
-  def self.sp(number)
-    Sesc::Cities::Sp.new(crawler_sesc(number)).print_on_terminal
+  def self.sp(number, places)
+    Sesc::Cities::Sp.new(crawler_sesc(number, places)).print_on_terminal
   end
 
   private_class_method
 
-  def self.crawler_sesc(number)
-    Sesc::Crawler.new(number).get
+  def self.crawler_sesc(number, places)
+    Sesc::Crawler.new(number, places).get
   end
 end

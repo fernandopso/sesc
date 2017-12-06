@@ -3,11 +3,12 @@
 module Sesc
   class Cli
     module Options
-      DEFAULT = { city: 'sp', number: 5 }.freeze
+      DEFAULT = { city: 'sp', number: 5, places: '' }.freeze
 
       COMMANDS_WITH_OPTIONS = {
         city:   ['-c', '--city'],
-        number: ['-n', '--number']
+        number: ['-n', '--number'],
+        places: ['-p', '--places']
       }.freeze
 
       COMMANDS_WITH_OPTIONS.each do |command, options|
@@ -21,7 +22,7 @@ module Sesc
       end
 
       def places?
-        args.include?('-p') || args.include?('--places')
+        args.include?('places')
       end
 
       def index_for(values)

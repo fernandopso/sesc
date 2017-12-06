@@ -2,7 +2,7 @@
 
 RSpec.describe Sesc::Crawler do
   let(:number) { Sesc::Cli::Options::DEFAULT[:number] }
-  subject      { described_class.new(number) }
+  subject      { described_class.new(number, '') }
 
   describe '#get' do
     before(:each) do

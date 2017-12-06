@@ -15,7 +15,7 @@ module Sesc
       if places?
         Sesc::Exporter::Places.print
       elsif Sesc::Cities.include?(city)
-        Sesc.send(city, number)
+        Sesc.send(city, number, places)
       else
         Sesc::Exporter::Printer.tabulated "Cidade #{city} não encontrada"
       end

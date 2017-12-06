@@ -4,7 +4,7 @@ RSpec.describe Sesc::Parser::Sp::Events do
   describe '#events' do
     before(:each) do
       VCR.use_cassette('parser/body') do
-        @html = Sesc::Crawler.new(1).get
+        @html = Sesc::Crawler.new(1, '').get
       end
     end
 

@@ -11,7 +11,7 @@ RSpec.describe Sesc::Cities::Sp do
 
     before(:each) do
       VCR.use_cassette('cities/sp') do
-        @html_response = Sesc::Crawler.new(1).get
+        @html_response = Sesc::Crawler.new(1, '').get
       end
     end
 

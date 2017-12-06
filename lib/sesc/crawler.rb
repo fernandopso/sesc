@@ -2,8 +2,9 @@
 
 module Sesc
   class Crawler
-    def initialize(number)
+    def initialize(number, places)
       @number = number
+      @places = places.to_s.split(',')
     end
 
     def get
@@ -17,11 +18,23 @@ module Sesc
     end
 
     def uri_url_path
-      URI(Sesc::Config.base_url + Sesc::Config.events_path + set_max_result)
+      URI(Sesc::Config.base_url + Sesc::Config.events_path + attrs)
     end
 
-    def set_max_result
+    def attrs
+      number + places.to_s
+    end
+
+    def number
       Sesc::Config.number % @number
+    end
+
+    def places
+      @places.map { |p| Sesc::Config.places % from_to(p) }.join if @places.any?
+    end
+
+    def from_to(place)
+      Sesc::Cli::Filter::PLACES.values.flatten(1)[place.to_i - 1].last
     end
   end
 end

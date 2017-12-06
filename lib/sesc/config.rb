@@ -3,12 +3,12 @@
 module Sesc
   class Config
     class << self
-
       ATTRIBUTES = %w[
         base_url
         events_path
         number
-      ]
+        places
+      ].freeze
 
       ATTRIBUTES.each do |attr|
         define_method(attr) do

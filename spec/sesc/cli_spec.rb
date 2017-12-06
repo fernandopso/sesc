@@ -75,13 +75,13 @@ RSpec.describe Sesc::Cli do
     context 'when send --places' do
       let(:options) { ['--places'] }
 
-      it { expect(places.flatten(2).count).to eq 40 }
+      it { expect(places.values.flatten.first.keys).to eq result }
     end
 
     context 'when send -p' do
       let(:options) { ['-p'] }
 
-      it { expect(places.flatten(2).count).to eq 40 }
+      it { expect(places.values.flatten.first.keys).to eq result }
     end
   end
 end

@@ -1,8 +1,10 @@
 AllCops:
   TargetRubyVersion: 2.3
+
+Style/BlockLength:
   Exclude:
-    - spec/sesc/cli_spec.rb
     - sesc.gemspec
+    - spec/**/*.rb
 
 Documentation:
   Enabled: false
