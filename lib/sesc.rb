@@ -23,10 +23,6 @@ module Sesc
     Sesc::Cities::Sp.new(crawler_sesc(number)).print_on_terminal
   end
 
-  def self.places
-    Sesc::Exporter::Places.print
-  end
-
   private_class_method
 
   def self.crawler_sesc(number)

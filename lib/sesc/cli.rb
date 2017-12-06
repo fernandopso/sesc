@@ -13,7 +13,7 @@ module Sesc
     def call
       return 'TODO: Write help' if help?
       if places?
-        Sesc.places
+        Sesc::Exporter::Places.print
       elsif Sesc::Cities.include?(city)
         Sesc.send(city, number)
       else

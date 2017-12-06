@@ -21,10 +21,4 @@ RSpec.describe Sesc do
       end
     end
   end
-
-  context '.places' do
-    it 'print all places' do
-      expect(Sesc.places.flatten(2).count).to eq 40
-    end
-  end
 end
