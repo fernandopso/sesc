@@ -3,12 +3,17 @@
 module Sesc
   class Config
     class << self
-      def base_url
-        file['base_url']
-      end
 
-      def events_path
-        file['events_path']
+      ATTRIBUTES = %w[
+        base_url
+        events_path
+        number
+      ]
+
+      ATTRIBUTES.each do |attr|
+        define_method(attr) do
+          file[attr]
+        end
       end
 
       private

@@ -1,2 +1,3 @@
-base_url: https://www.sescsp.org.br
-events_path: /programacao/ajax/homeView.action?atividades=&calendar_dates=&remove_dates=&maxResults=%s
+base_url: 'https://www.sescsp.org.br'
+events_path: '/programacao/ajax/homeView.action?atividades=&calendar_dates=&remove_dates='
+number: '&maxResults=%s'
