@@ -11,7 +11,7 @@ module Sesc
     end
 
     def call
-      return 'TODO: Write help' if help?
+      return Sesc::Exporter::Help.print if help?
       if places?
         Sesc::Exporter::Places.print
       elsif Sesc::Cities.include?(city)
