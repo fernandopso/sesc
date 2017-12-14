@@ -8,21 +8,38 @@ module Sesc
         places: 'Unidades do sesc que podem serem filtradas'
       }.freeze
 
+      FILTERS = {
+        places: 'Listar todos os SESC'
+      }
 
       class << self
         def print
           header
-          help
-          DESCRIPTION.each do |command, description|
-            puts("#{alias_for(command)}#{space_for(alias_for(command))}#{DESCRIPTION[command]}")
-          end
-        end
 
-        def header
-          puts 'Uso: sesc [opções...]'
           puts ''
           puts 'Opções:'
           puts ''
+
+          help
+
+          DESCRIPTION.each do |command, description|
+            text = alias_for(command)
+            puts("#{text}#{space_for(text)}#{description}")
+          end
+
+          puts ''
+          puts 'Filtros:'
+          puts ''
+
+          FILTERS.each do |command, description|
+            puts("#{command}#{space_for(command)}#{description}")
+          end
+
+          true
+        end
+
+        def header
+          puts 'Uso: sesc [filtros...] [opções...]'
         end
 
         def help

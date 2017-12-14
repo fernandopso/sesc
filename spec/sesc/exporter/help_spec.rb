@@ -3,12 +3,7 @@
 RSpec.describe Sesc::Exporter::Help do
   context '.print' do
     it 'print help' do
-      expect(Sesc::Exporter::Help.print).to eq(
-        {
-          number: 'Quantidade de eventos a serem listados',
-          places: 'Unidades do sesc que podem serem filtradas'
-        }
-      )
+      expect(Sesc::Exporter::Help.print).to be true
     end
   end
 end
