@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :response, class: OpenStruct do
     url '/programacao/109424_MOVE+NATACAO'
@@ -8,7 +10,7 @@ FactoryBot.define do
     date '03/01 a 30/12'
     hours 'Diversos Horários'
     place 'SESC Vila Mariana'
-    description 'Projeto que estimula a prática autônoma da natação, por meio de treinos pré-montados, disponíveis na...'
+    description 'Projeto que estimula a prática autônoma da natação'
     age_limit 'Não recomendado para menores de 12 anos'
     price 'Grátis'
   end

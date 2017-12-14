@@ -10,32 +10,29 @@ module Sesc
 
       FILTERS = {
         places: 'Listar todos os SESC'
-      }
+      }.freeze
 
       class << self
         def print
           header
-
-          puts ''
-          puts 'Opções:'
-          puts ''
-
+          options
           help
+          descriptions
+          filters
+          true
+        end
 
+        def descriptions
           DESCRIPTION.each do |command, description|
             text = alias_for(command)
             puts("#{text}#{space_for(text)}#{description}")
           end
+        end
 
+        def options
           puts ''
-          puts 'Filtros:'
+          puts 'Opções:'
           puts ''
-
-          FILTERS.each do |command, description|
-            puts("#{command}#{space_for(command)}#{description}")
-          end
-
-          true
         end
 
         def header
@@ -44,6 +41,16 @@ module Sesc
 
         def help
           puts "-h --help#{space_for('-h --help')}Exibe este texto de ajuda"
+        end
+
+        def filters
+          puts ''
+          puts 'Filtros:'
+          puts ''
+
+          FILTERS.each do |command, description|
+            puts("#{command}#{space_for(command)}#{description}")
+          end
         end
 
         def alias_for(command)
