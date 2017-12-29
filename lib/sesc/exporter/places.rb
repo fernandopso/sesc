@@ -11,13 +11,17 @@ module Sesc
         private
 
         def print_cities(cities, i = 0)
+          example
           cities.each do |city, places|
-            Sesc::Exporter::Printer.tabulated('')
-            Sesc::Exporter::Printer.tabulated(city)
+            Sesc::Exporter::Printer.new(city, up: 1).tabulated
             places.each do |(place, _)|
-              Sesc::Exporter::Printer.tabulated("#{i += 1}. #{place}", 2)
+              Sesc::Exporter::Printer.new("#{i += 1}. #{place}", tab: 2).tabulated
             end
           end
+        end
+
+        def example
+          Sesc::Exporter::Printer.new("Example: sesc -p 1,3,10", tab: 0).tabulated
         end
       end
     end

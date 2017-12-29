@@ -15,7 +15,6 @@ module Sesc
 
         def print_event_for(events)
           events.each do |event|
-            pprint ''
             title(event)
             date(event)
             price(event)
@@ -38,7 +37,7 @@ module Sesc
         end
 
         def title(event)
-          pprint "#{event[:title]} | #{event[:description]}"
+          pprint("#{event[:title]} | #{event[:description]}", up: 1)
         end
 
         def price(event)
@@ -62,8 +61,8 @@ module Sesc
           pprint "URL: #{Sesc::Config.base_url + event[:url]}"
         end
 
-        def pprint(line)
-          Sesc::Exporter::Printer.tabulated(line)
+        def pprint(line, up: 0)
+          Sesc::Exporter::Printer.new(line, up: up).tabulated
         end
       end
     end

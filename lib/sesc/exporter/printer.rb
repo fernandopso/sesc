@@ -3,10 +3,33 @@
 module Sesc
   class Exporter
     class Printer
-      class << self
-        def tabulated(line, tabulation = 1)
-          puts(' ' * 4 * tabulation + line) unless ENV['DISABLE_OUTPUT']
-        end
+      def initialize(line, tab: 1, up: 0, down: 0)
+        @line = line
+        @tab  = tab
+        @up   = up
+        @down = down
+      end
+
+      def tabulated
+        puts(output) unless ENV['DISABLE_OUTPUT']
+      end
+
+      private
+
+      def output
+        up_line + indentation + @line + down_line
+      end
+
+      def up_line
+        "\n" * @up
+      end
+
+      def indentation
+        ' ' * 4 * @tab
+      end
+
+      def down_line
+        "\n" * @down
       end
     end
   end

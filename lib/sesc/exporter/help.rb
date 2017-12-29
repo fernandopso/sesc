@@ -62,7 +62,7 @@ module Sesc
         end
 
         def puts(text)
-          Sesc::Exporter::Printer.tabulated(text.to_s)
+          Sesc::Exporter::Printer.new(text.to_s).tabulated
         end
       end
     end
