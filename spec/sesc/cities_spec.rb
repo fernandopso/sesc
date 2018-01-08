@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Sesc::Cities do
+  before { allow(Sesc::Cities).to receive(:sesc_path).and_return('./lib/sesc/cities/') }
+
   describe '.include?' do
     context 'when city is included' do
       it { expect(Sesc::Cities.include?('sp')).to be true }

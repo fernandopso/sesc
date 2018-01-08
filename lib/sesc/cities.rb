@@ -2,14 +2,16 @@
 
 module Sesc
   class Cities
-    FOLTER = './lib/sesc/cities/'
-
     def self.include?(city)
       valids.include?(city.downcase)
     end
 
     def self.valids
-      Dir[FOLTER + '*'].map { |b| b.gsub(FOLTER, '').gsub('.rb', '').downcase }
+      Dir[sesc_path + '*'].map { |b| b.gsub(sesc_path, '').gsub('.rb', '').downcase }
+    end
+
+    def self.sesc_path
+      Gem::Specification.find_by_name('sesc').gem_dir
     end
   end
 end
