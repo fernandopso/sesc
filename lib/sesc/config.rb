@@ -19,7 +19,11 @@ module Sesc
       private
 
       def file
-        @file ||= YAML.load_file('config.yml')
+        @file ||= YAML.load_file(gem_path + '/config.yml')
+      end
+
+      def gem_path
+        Gem::Specification.find_by_name('sesc').gem_dir
       end
     end
   end

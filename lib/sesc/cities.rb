@@ -2,16 +2,18 @@
 
 module Sesc
   class Cities
+    CITIES_FOLDER = '/lib/sesc/cities/'
+
     def self.include?(city)
       valids.include?(city.downcase)
     end
 
     def self.valids
-      Dir[sesc_path + '*'].map { |b| b.gsub(sesc_path, '').gsub('.rb', '').downcase }
+      Dir[cities_path + '*'].map { |b| b.gsub(cities_path, '').gsub('.rb', '').downcase }
     end
 
-    def self.sesc_path
-      Gem::Specification.find_by_name('sesc').gem_dir
+    def self.cities_path
+      Gem::Specification.find_by_name('sesc').gem_dir + CITIES_FOLDER
     end
   end
 end
