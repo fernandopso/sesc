@@ -16,4 +16,4 @@ then
 $ sesc --help
 ```
 
-![sesc](https://user-images.githubusercontent.com/3316732/34693475-d6a129e4-f4aa-11e7-9dd5-17712515997f.gif)
+![sesc](https://user-images.githubusercontent.com/3316732/38907228-357d207e-4291-11e8-9f6a-3852c5f07161.gif)
