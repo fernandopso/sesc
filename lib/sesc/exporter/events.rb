@@ -26,10 +26,7 @@ module Sesc
         end
 
         def place(sesc)
-          pprint ''
-          pprint '##'
-          pprint "# #{sesc}"
-          pprint '##'
+          pprint sesc
         end
 
         def date(event)
@@ -62,7 +59,7 @@ module Sesc
         end
 
         def pprint(line, up: 0)
-          Sesc::Exporter::Printer.new(line, up: up).tabulated
+          Sesc::Exporter::Printer.new(line, up: up).terminal
         end
       end
     end

@@ -13,15 +13,15 @@ module Sesc
         def print_cities(cities, i = 0)
           example
           cities.each do |city, places|
-            Sesc::Exporter::Printer.new(city, up: 1).tabulated
+            Sesc::Exporter::Printer.new(city, up: 1).terminal
             places.each do |(place, _)|
-              Sesc::Exporter::Printer.new("#{i += 1}. #{place}", tab: 2).tabulated
+              Sesc::Exporter::Printer.new("#{i += 1}. #{place}").terminal
             end
           end
         end
 
         def example
-          Sesc::Exporter::Printer.new("Example: sesc -p 1,3,10", tab: 0).tabulated
+          Sesc::Exporter::Printer.new("Example: sesc -p 1,3,10").terminal
         end
       end
     end
