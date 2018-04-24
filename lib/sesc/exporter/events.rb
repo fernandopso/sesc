@@ -24,7 +24,7 @@ module Sesc
         end
 
         def title(event)
-          pprint("#{event[:title]} | #{event[:description]}", up: 1)
+          pprint "#{event[:title]} | #{event[:description]}", up: 1
         end
 
         def place(sesc)
@@ -56,8 +56,10 @@ module Sesc
           pprint "URL: #{Sesc::Config.base_url + event[:url]}"
         end
 
-        def pprint(line, up: 0)
-          Sesc::Exporter::Printer.new(line, up: up).terminal
+        def pprint(line, up: 0, color: :blue, background: :red)
+          Sesc::Exporter::Printer.new(
+            line, color: color, up: up, background: background
+          ).terminal
         end
       end
     end
