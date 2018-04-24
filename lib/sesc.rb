@@ -3,6 +3,7 @@
 require 'net/http'
 require 'nokogiri'
 require 'yaml'
+require 'colorize'
 
 require 'sesc/cli/options'
 require 'sesc/cli/filter'

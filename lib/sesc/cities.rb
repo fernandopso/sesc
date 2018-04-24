@@ -9,7 +9,9 @@ module Sesc
     end
 
     def self.valids
-      Dir[cities_path + '*'].map { |b| b.gsub(cities_path, '').gsub('.rb', '').downcase }
+      Dir[cities_path + '*'].map do |b|
+        b.gsub(cities_path, '').gsub('.rb', '').downcase
+      end
     end
 
     def self.cities_path

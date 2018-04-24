@@ -3,7 +3,11 @@
 RSpec.describe Sesc::Cli do
   let(:result) { build(:response).to_h.keys }
 
-  before { allow(Sesc::Cities).to receive(:cities_path).and_return('./lib/sesc/cities/') }
+  before do
+    allow(Sesc::Cities)
+      .to receive(:cities_path)
+      .and_return('./lib/sesc/cities/')
+  end
 
   describe '.call' do
     subject { @events.values.flatten.first.keys }

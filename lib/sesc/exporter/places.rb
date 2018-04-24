@@ -21,7 +21,7 @@ module Sesc
         end
 
         def example
-          Sesc::Exporter::Printer.new("Example: sesc -p 1,3,10").terminal
+          Sesc::Exporter::Printer.new('Example: sesc -p 1,3,10').terminal
         end
       end
     end

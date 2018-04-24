@@ -5,17 +5,15 @@ module Sesc
     class Events
       class << self
         def print(sescs)
-          sescs.each do |sesc, events|
-            place(sesc)
-            print_event_for(events)
-          end
+          sescs.each { |sesc, events| print_event_for(sesc, events) }
         end
 
         private
 
-        def print_event_for(events)
+        def print_event_for(sesc, events)
           events.each do |event|
             title(event)
+            place(sesc)
             date(event)
             price(event)
             hours(event)
@@ -25,16 +23,16 @@ module Sesc
           end
         end
 
+        def title(event)
+          pprint("#{event[:title]} | #{event[:description]}", up: 1)
+        end
+
         def place(sesc)
-          pprint sesc
+          pprint "Local: #{sesc}"
         end
 
         def date(event)
           pprint "Datas: #{event[:date]}"
-        end
-
-        def title(event)
-          pprint("#{event[:title]} | #{event[:description]}", up: 1)
         end
 
         def price(event)
