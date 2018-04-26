@@ -3,18 +3,16 @@
 module Sesc
   class Exporter
     class Printer
-      attr_accessor :text, :up, :down, :color, :background
+      attr_accessor :text, :up, :down
 
       def initialize(text, params = {})
         self.text       = text
         self.up         = params.fetch(:up, 0)
         self.down       = params.fetch(:down, 0)
-        self.color      = params.fetch(:color, :blue)
-        self.background = params.fetch(:background, :red)
       end
 
       def terminal
-        puts(output) unless ENV['DISABLE_OUTPUT']
+        puts output unless ENV['DISABLE_OUTPUT']
       end
 
       private
@@ -24,7 +22,7 @@ module Sesc
       end
 
       def colorize
-        text.colorize(color: color, background: background)
+        text
       end
 
       def up_blank_lines

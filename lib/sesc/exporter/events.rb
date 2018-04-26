@@ -4,62 +4,77 @@ module Sesc
   class Exporter
     class Events
       class << self
+        ATTRIBUTES = %i[
+          title description place date price hours age_limit availability url
+        ].freeze
+
         def print(sescs)
-          sescs.each { |sesc, events| print_event_for(sesc, events) }
+          sescs.each do |sesc, events|
+            events.each do |event|
+              print_event_for(sesc, event) if availability?(event)
+            end
+          end
         end
 
         private
 
-        def print_event_for(sesc, events)
-          events.each do |event|
-            title(event)
-            place(sesc)
-            date(event)
-            price(event)
-            hours(event)
-            age_limit(event)
-            availability(event)
-            url(event)
-          end
+        def print_event_for(sesc, event)
+          title(event)
+          description(event)
+          place(sesc)
+          date(event)
+          price(event)
+          hours(event)
+          age_limit(event)
+          url(event)
         end
 
         def title(event)
-          pprint "#{event[:title]} | #{event[:description]}", up: 1
+          pprint paint(event[:title], color: :blue), up: 1
+        end
+
+        def description(event)
+          pprint paint('Descrição: ') + paint(event[:description], yellow)
         end
 
         def place(sesc)
-          pprint "Local: #{sesc}"
+          pprint paint('Local: ') + paint(sesc, yellow)
         end
 
         def date(event)
-          pprint "Datas: #{event[:date]}"
+          pprint paint('Datas: ') + paint(event[:date], yellow)
         end
 
         def price(event)
-          pprint "Preço: #{event[:price]}"
+          pprint paint('Preço: ') + paint(event[:price], yellow)
         end
 
-        def availability(event)
-          return unless event[:availability]
-          pprint "Disponibilidade: #{event[:availability]}"
+        def availability?(event)
+          event[:availability] != 'Esgotado'
         end
 
         def age_limit(event)
-          pprint "Classificação: #{event[:age_limit]}"
+          pprint paint('Classificação: ') + paint(event[:age_limit], yellow)
         end
 
         def hours(event)
-          pprint "Horários: #{event[:hours]}"
+          pprint paint('Horários: ') + paint(event[:hours], yellow)
         end
 
         def url(event)
-          pprint "URL: #{Sesc::Config.base_url + event[:url]}"
+          pprint paint(Sesc::Config.base_url + event[:url])
         end
 
-        def pprint(line, up: 0, color: :blue, background: :red)
-          Sesc::Exporter::Printer.new(
-            line, color: color, up: up, background: background
-          ).terminal
+        def pprint(line, up: 0)
+          Sesc::Exporter::Printer.new(line, up: up).terminal
+        end
+
+        def paint(text, options = {})
+          Sesc::Exporter::Painter.new(text, options).default
+        end
+
+        def yellow
+          { color: :yellow }
         end
       end
     end

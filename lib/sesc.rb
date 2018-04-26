@@ -14,10 +14,11 @@ require 'sesc/cities/sp'
 require 'sesc/config'
 require 'sesc/parser/sp/events'
 require 'sesc/parser/sp/body'
+require 'sesc/exporter/events'
 require 'sesc/exporter/help'
+require 'sesc/exporter/painter'
 require 'sesc/exporter/places'
 require 'sesc/exporter/printer'
-require 'sesc/exporter/events'
 require 'sesc/version'
 
 module Sesc
