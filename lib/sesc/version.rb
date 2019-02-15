@@ -2,6 +2,6 @@
 
 module Sesc
   module Version
-    STRING = '0.1.8'
+    STRING = '0.1.9'
   end
 end
