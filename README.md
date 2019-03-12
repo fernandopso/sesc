@@ -1,8 +1,10 @@
 # sesc
 
-https://www.sescsp.org.br
+A simple crawler to list SESC events schedule on Terminal just typing `sesc`
 
 ![sesc](https://user-images.githubusercontent.com/3316732/38907228-357d207e-4291-11e8-9f6a-3852c5f07161.gif)
+
+https://www.sescsp.org.br/programacao
 
 ## Install
 

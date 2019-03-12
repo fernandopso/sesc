@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Sesc::Version::STRING
   s.date        = '2017-11-05'
   s.summary     = 'Sesc API'
-  s.description = 'A simple wrap to list events of SESC'
+  s.description = 'A simple crawler to list SESC events schedule on Terminal'
   s.authors     = ['fernandopso']
   s.email       = 'fernandopso@bsi.ufla.br'
   s.license     = 'MIT'
@@ -37,5 +37,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rspec', '~> 3.7')
   s.add_development_dependency('rubocop', '~> 0.51.0', '>= 0.51.0')
   s.add_development_dependency('vcr', '~> 3.0', '>= 3.0.0')
-  s.add_development_dependency('webmock', '~> 3.1', '>= 3.1.0')
+  s.add_development_dependency('webmock', '~> 3.5', '>= 3.5.0')
 end
